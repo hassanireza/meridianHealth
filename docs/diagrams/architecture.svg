@@ -1,0 +1,53 @@
+<svg viewBox="0 0 720 620" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="720" height="620" fill="#F8F7F5"/>
+  <rect x="1" y="1" width="718" height="618" fill="none" stroke="#0A1628" stroke-width="1" stroke-opacity="0.15"/>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="360" y="38" text-anchor="middle" fill="#0A1628" font-size="16" letter-spacing="1">MERIDIAN HEALTH &#8212; APPLICATION ARCHITECTURE</text>
+    <text x="360" y="58" text-anchor="middle" fill="#0A1628" font-size="10" letter-spacing="0.5" opacity="0.6">React 19 &#183; TypeScript &#183; Vite</text>
+
+    <!-- Layer 1: Components -->
+    <rect x="90" y="86" width="540" height="70" rx="2" fill="#0A1628"/>
+    <text x="360" y="114" text-anchor="middle" fill="#F8F7F5" font-size="13" letter-spacing="0.5">COMPONENT LAYER</text>
+    <text x="360" y="133" text-anchor="middle" fill="#B8965A" font-size="10" letter-spacing="0.3">Nav &#183; Hero &#183; BodyMap &#183; SymptomPanel &#183; SelectedTray &#183; AnalysisModal</text>
+    <text x="360" y="148" text-anchor="middle" fill="#F8F7F5" font-size="9" letter-spacing="0.2" opacity="0.65">Presentational, subscribes to state via useAppState()</text>
+
+    <line x1="360" y1="156" x2="360" y2="182" stroke="#B8965A" stroke-width="1.5"/>
+    <polygon points="360,182 355,172 365,172" fill="#B8965A"/>
+
+    <!-- Layer 2: State -->
+    <rect x="90" y="190" width="540" height="70" rx="2" fill="none" stroke="#0A1628" stroke-width="1.25"/>
+    <text x="360" y="218" text-anchor="middle" fill="#0A1628" font-size="13" letter-spacing="0.5">STATE LAYER &#8212; AppController</text>
+    <text x="360" y="237" text-anchor="middle" fill="#0A1628" font-size="10" letter-spacing="0.3" opacity="0.75">Class-based controller: gender, view, active zone, SymptomProfile, analysis workflow</text>
+    <text x="360" y="252" text-anchor="middle" fill="#0A1628" font-size="9" letter-spacing="0.2" opacity="0.55">Publishes immutable snapshots to subscribers (pub-sub)</text>
+
+    <line x1="360" y1="260" x2="360" y2="286" stroke="#B8965A" stroke-width="1.5"/>
+    <polygon points="360,286 355,276 365,276" fill="#B8965A"/>
+
+    <!-- Layer 3: Services -->
+    <rect x="90" y="294" width="540" height="70" rx="2" fill="none" stroke="#0A1628" stroke-width="1.25"/>
+    <text x="360" y="322" text-anchor="middle" fill="#0A1628" font-size="13" letter-spacing="0.5">SERVICE LAYER</text>
+    <text x="360" y="341" text-anchor="middle" fill="#0A1628" font-size="10" letter-spacing="0.3" opacity="0.75">SymptomRepository &#183; ConditionAnalyzer</text>
+    <text x="360" y="356" text-anchor="middle" fill="#0A1628" font-size="9" letter-spacing="0.2" opacity="0.55">Resolves zone and condition lookups against the reference dataset</text>
+
+    <line x1="360" y1="364" x2="360" y2="390" stroke="#B8965A" stroke-width="1.5"/>
+    <polygon points="360,390 355,380 365,380" fill="#B8965A"/>
+
+    <!-- Layer 4: Domain Models -->
+    <rect x="90" y="398" width="540" height="70" rx="2" fill="none" stroke="#0A1628" stroke-width="1.25"/>
+    <text x="360" y="426" text-anchor="middle" fill="#0A1628" font-size="13" letter-spacing="0.5">DOMAIN MODEL LAYER</text>
+    <text x="360" y="445" text-anchor="middle" fill="#0A1628" font-size="10" letter-spacing="0.3" opacity="0.75">BodyAtlas &#183; BodyZone &#183; Symptom &#183; SymptomProfile &#183; Condition</text>
+    <text x="360" y="460" text-anchor="middle" fill="#0A1628" font-size="9" letter-spacing="0.2" opacity="0.55">Plain TypeScript classes encapsulating clinical domain rules</text>
+
+    <line x1="360" y1="468" x2="360" y2="494" stroke="#B8965A" stroke-width="1.5"/>
+    <polygon points="360,494 355,484 365,484" fill="#B8965A"/>
+
+    <!-- Layer 5: Data -->
+    <rect x="90" y="502" width="540" height="70" rx="2" fill="#0A1628"/>
+    <text x="360" y="530" text-anchor="middle" fill="#F8F7F5" font-size="13" letter-spacing="0.5">STATIC DATA LAYER</text>
+    <text x="360" y="549" text-anchor="middle" fill="#B8965A" font-size="10" letter-spacing="0.3">symptomData.ts &#183; conditionData.ts &#183; bodyZones.ts</text>
+    <text x="360" y="563" text-anchor="middle" fill="#F8F7F5" font-size="9" letter-spacing="0.2" opacity="0.65">24 body zones &#183; typed clinical reference records</text>
+
+    <text x="360" y="598" text-anchor="middle" fill="#0A1628" font-size="9" letter-spacing="0.3" opacity="0.45">Every arrow is a one-way, top-down dependency &#8212; no layer reaches upward</text>
+  </g>
+</svg>
