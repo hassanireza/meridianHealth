@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/actions/workflow/status/hassanireza/meridian-health/deploy.yml?branch=main&label=deploy&color=0B1F3A&labelColor=1a1a1a" alt="Deploy status" />
-  <img src="https://img.shields.io/github/actions/workflow/status/hassanireza/meridian-health/ci.yml?branch=main&label=ci&color=0B1F3A&labelColor=1a1a1a" alt="CI status" />
+  <img src="https://img.shields.io/github/actions/workflow/status/hassanireza/meridianHealth/deploy.yml?branch=main&label=deploy&color=0B1F3A&labelColor=1a1a1a" alt="Deploy status" />
+  <img src="https://img.shields.io/github/actions/workflow/status/hassanireza/meridianHealth/ci.yml?branch=main&label=ci&color=0B1F3A&labelColor=1a1a1a" alt="CI status" />
   <img src="https://img.shields.io/badge/react-19-0B1F3A?labelColor=1a1a1a" alt="React 19" />
   <img src="https://img.shields.io/badge/typescript-strict-0B1F3A?labelColor=1a1a1a" alt="TypeScript strict" />
   <img src="https://img.shields.io/badge/license-MIT-0B1F3A?labelColor=1a1a1a" alt="MIT License" />
