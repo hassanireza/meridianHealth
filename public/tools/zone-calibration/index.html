@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Meridian Health — Zone Calibration Tool</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h1>Zone Calibration Tool</h1>
+  <div class="sub">Meridian Health &mdash; body map hit-region editor</div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-gender="male" data-view="front">Male Front</button>
+    <button class="tab-btn" data-gender="male" data-view="back">Male Back</button>
+    <button class="tab-btn" data-gender="female" data-view="front">Female Front</button>
+    <button class="tab-btn" data-gender="female" data-view="back">Female Back</button>
+  </div>
+
+  <div class="hint">
+    Click a highlight on the image (or in the list below) to select it, then drag it to move,
+    or use the controls to nudge position, size, and rotation. When everything lines up, click
+    <b>Export JSON</b> and send that file back.
+  </div>
+
+  <div class="section-title">Zones</div>
+  <ul class="zone-list" id="zoneList"></ul>
+
+  <div id="editor"></div>
+
+  <div class="section-title">File</div>
+  <button class="btn btn-gold" id="exportBtn">Export JSON</button>
+  <button class="btn btn-ghost" id="importBtn">Import JSON</button>
+  <button class="btn btn-ghost" id="resetBtn">Reset This View</button>
+  <input type="file" id="fileInput" accept="application/json" />
+  <div class="status" id="status"></div>
+</div>
+
+<div class="main">
+  <div class="canvas-wrap" id="canvasWrap">
+    <img id="mannikinImg" src="" alt="mannequin" />
+    <svg viewBox="0 0 320 480" id="svgOverlay"></svg>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

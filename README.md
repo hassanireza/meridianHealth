@@ -8,6 +8,15 @@
   <img src="https://img.shields.io/badge/react-19-0B1F3A?labelColor=1a1a1a" alt="React 19" />
   <img src="https://img.shields.io/badge/typescript-strict-0B1F3A?labelColor=1a1a1a" alt="TypeScript strict" />
   <img src="https://img.shields.io/badge/license-MIT-0B1F3A?labelColor=1a1a1a" alt="MIT License" />
+  <img src="https://img.shields.io/badge/body%20map-24%20calibrated%20zones-B8965A?labelColor=1a1a1a" alt="24 calibrated zones" />
+</p>
+
+<p align="center">
+  <a href="#live-application"><b>Live Application</b></a> ·
+  <a href="#zone-calibration-studio"><b>Zone Calibration Studio</b></a> ·
+  <a href="#architecture"><b>Architecture</b></a> ·
+  <a href="#getting-started"><b>Getting Started</b></a> ·
+  <a href="#deployment"><b>Deployment</b></a>
 </p>
 
 <p align="center">
@@ -28,7 +37,10 @@ This repository is a full migration of the original static HTML/CSS/JS prototype
 production React and TypeScript application, organized around a clear object-oriented domain
 model rather than ad-hoc DOM manipulation.
 
-**Live demo:** deployed automatically to GitHub Pages on every push to `main`.
+### Live application
+
+> **[Open Meridian Health →](https://hassanireza.github.io/meridianHealth/)**
+> Deployed automatically to GitHub Pages on every push to `main`. No installation required.
 
 ## What changed in this migration
 
@@ -80,6 +92,50 @@ body type and per view side. Front and back geometry is now defined independentl
 female mannequins, so hips, shoulders, and limb width track the correct silhouette instead of
 sharing one generic outline.
 
+### Zone Calibration Studio
+
+<p align="center">
+  <img src="docs/diagrams/calibration-icon.svg" alt="Zone Calibration Studio icon" width="56" />
+</p>
+
+To produce that alignment reliably — and to keep it maintainable as the mannequin artwork
+evolves — this repository ships its own purpose-built calibration instrument: an in-browser
+studio for authoring the exact geometry consumed by `src/data/bodyZones.ts`.
+
+The studio renders each of the four source mannequins (male/female, front/back) against the live
+SVG hit-region overlay, and lets a clinician-facing content editor or engineer select any zone,
+then drag, nudge, resize, and rotate it directly on top of the artwork until it traces the
+silhouette precisely. Every adjustment is reflected live in the coordinate readout, and the full
+zone set for a view exports to a single calibrated JSON file, ready to be dropped straight into
+the data layer.
+
+<p align="center">
+  <a href="https://hassanireza.github.io/meridianHealth/tools/zone-calibration/">
+    <img src="docs/screenshots/zone-calibration-tool.png" alt="Zone Calibration Studio — interactive body zone editor" width="100%" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://hassanireza.github.io/meridianHealth/tools/zone-calibration/">
+    <img src="https://img.shields.io/badge/launch-Zone%20Calibration%20Studio-B8965A?labelColor=1a1a1a&style=for-the-badge" alt="Launch Zone Calibration Studio" />
+  </a>
+</p>
+
+| Capability | Description |
+|---|---|
+| Visual, on-canvas editing | Select a zone from the list or click it directly on the mannequin; drag to reposition, use handles to resize and rotate |
+| Per view, per body type | Male/female and front/back are calibrated independently, matching the app's own data model |
+| Live coordinate readout | Position, dimensions, and rotation update in real time as a zone is adjusted |
+| JSON import / export | Export a calibrated view as JSON, or re-import a previous pass to continue refining it |
+| Zero build step | A static HTML/CSS/JS tool with no dependencies — open it directly, or serve it locally |
+
+The studio is deployed alongside the main application and published at
+**[`/tools/zone-calibration/`](https://hassanireza.github.io/meridianHealth/tools/zone-calibration/)**
+on the same GitHub Pages site, and lives in this repository under
+[`public/tools/zone-calibration`](public/tools/zone-calibration). Because it sits inside `public/`,
+Vite copies it into `dist/` unmodified on every build, so it deploys automatically through the
+same CI/CD pipeline as the main application — no separate workflow required.
+
 ## Features
 
 - Interactive front/back, male/female anatomical body map with 24 selectable regions
@@ -88,6 +144,7 @@ sharing one generic outline.
 - Simulated analysis workflow returning ranked, specialty-tagged candidate conditions
 - Fully keyboard-accessible zone selection (tab, enter, space) with ARIA labeling throughout
 - Strict TypeScript domain model with zero `any` usage
+- Bundled [Zone Calibration Studio](#zone-calibration-studio) for authoring and re-exporting body zone geometry
 - GitHub Actions CI on every pull request, and automatic Pages deployment on merge to `main`
 
 ## Getting started
@@ -126,8 +183,11 @@ src/
   styles/          Application styles
 public/
   mannikin/        Mannequin artwork (front/back, male/female)
+  tools/
+    zone-calibration/  Zone Calibration Studio — static app, deployed as-is to Pages
 docs/
   diagrams/        README illustrations
+  screenshots/      README product screenshots
 .github/workflows/ CI and Pages deployment
 ```
 
