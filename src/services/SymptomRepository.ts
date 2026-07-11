@@ -2,7 +2,7 @@ import { SYMPTOM_DATA } from '../data/symptomData';
 import { BodyZone } from '../models/BodyZone';
 
 /**
- * Meridian Health — SymptomRepository service.
+ * Meridian Health: SymptomRepository service.
  * Provides typed BodyZone lookups over the static clinical reference data.
  */
 export class SymptomRepository {

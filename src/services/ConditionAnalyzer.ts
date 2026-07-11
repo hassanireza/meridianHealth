@@ -2,7 +2,7 @@ import { CONDITION_DATABASE, DEFAULT_CONDITIONS } from '../data/conditionData';
 import { Condition } from '../models/Condition';
 
 /**
- * Meridian Health — ConditionAnalyzer service.
+ * Meridian Health: ConditionAnalyzer service.
  * Resolves a body zone identifier to a ranked list of candidate conditions.
  * Falls back to a generic musculoskeletal / neurological / rheumatologic
  * triad when a zone has no dedicated dataset yet.

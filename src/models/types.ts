@@ -1,5 +1,5 @@
 /**
- * Meridian Health — Shared domain types.
+ * Meridian Health: Shared domain types.
  */
 
 export type Gender = 'male' | 'female';

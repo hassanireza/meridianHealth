@@ -1,5 +1,5 @@
 /**
- * Meridian Health — Condition Database
+ * Meridian Health: Condition Database
  * Reference conditions returned by the analysis engine, keyed by body zone.
  */
 

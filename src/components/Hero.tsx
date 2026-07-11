@@ -67,7 +67,7 @@ export function Hero() {
             <span className="stat-label">Conditions Mapped</span>
           </div>
           <div className="stat-item">
-            <span className="stat-num">38</span>
+            <span className="stat-num">24</span>
             <span className="stat-label">Body Regions</span>
           </div>
           <div className="stat-item">

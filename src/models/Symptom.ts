@@ -1,5 +1,5 @@
 /**
- * Meridian Health — Symptom model.
+ * Meridian Health: Symptom model.
  * Represents a single clinically defined symptom belonging to a body zone.
  */
 export class Symptom {

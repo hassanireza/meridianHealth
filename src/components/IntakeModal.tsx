@@ -40,12 +40,12 @@ function toCm(form: FormState): number {
 }
 
 /**
- * Meridian Health — IntakeModal.
+ * Meridian Health: IntakeModal.
  *
  * The gateway screen for the symptom checker: collects the minimum
  * clinical intake (name, age, gender, weight, height), validates it,
  * and hands a PatientProfile to the AppController. Replaces the previous
- * manual male / female toggle — gender is now determined by the patient's
+ * manual male / female toggle: gender is now determined by the patient's
  * own intake response, and drives both the mannequin shown and the BMI
  * calculation.
  */

@@ -39,7 +39,7 @@ model rather than ad-hoc DOM manipulation.
 
 ### Live application
 
-> **[Open Meridian Health →](https://hassanireza.github.io/meridianHealth/)**
+> **[Open Meridian Health -->](https://hassanireza.github.io/meridianHealth/)**
 > Deployed automatically to GitHub Pages on every push to `main`. No installation required.
 
 ## What changed in this migration
@@ -64,17 +64,17 @@ directly, and no layer reaches back upward.
   <img src="docs/diagrams/architecture.svg" alt="Application architecture diagram" width="640" />
 </p>
 
-- **Component layer** — presentational React components (`Nav`, `Hero`, `BodyMap`, `SymptomPanel`,
+- **Component layer**: presentational React components (`Nav`, `Hero`, `BodyMap`, `SymptomPanel`,
   `SelectedTray`, `AnalysisModal`, `HowItWorks`, `Footer`). They read state through `useAppState()`
   and never hold business logic.
-- **State layer** — `AppController`, a plain TypeScript class that owns every piece of interactive
+- **State layer**: `AppController`, a plain TypeScript class that owns every piece of interactive
   state (selected body type, view side, active zone, running `SymptomProfile`, and the analysis
   workflow) and publishes immutable snapshots to subscribers.
-- **Service layer** — `SymptomRepository` and `ConditionAnalyzer`, which resolve zone and condition
+- **Service layer**: `SymptomRepository` and `ConditionAnalyzer`, which resolve zone and condition
   lookups against the reference dataset.
-- **Domain model layer** — `BodyAtlas`, `BodyZone`, `Symptom`, `SymptomProfile`, and `Condition`:
+- **Domain model layer**: `BodyAtlas`, `BodyZone`, `Symptom`, `SymptomProfile`, and `Condition`,
   small, independently testable classes that encapsulate the clinical domain rules.
-- **Static data layer** — typed reference data (`symptomData.ts`, `conditionData.ts`,
+- **Static data layer**: typed reference data (`symptomData.ts`, `conditionData.ts`,
   `bodyZones.ts`) generated from the original dataset.
 
 ### Symptom-to-analysis flow
@@ -98,8 +98,8 @@ sharing one generic outline.
   <img src="docs/diagrams/calibration-icon.svg" alt="Zone Calibration Studio icon" width="56" />
 </p>
 
-To produce that alignment reliably — and to keep it maintainable as the mannequin artwork
-evolves — this repository ships its own purpose-built calibration instrument: an in-browser
+To produce that alignment reliably, and to keep it maintainable as the mannequin artwork
+evolves, this repository ships its own purpose-built calibration instrument: an in-browser
 studio for authoring the exact geometry consumed by `src/data/bodyZones.ts`.
 
 The studio renders each of the four source mannequins (male/female, front/back) against the live
@@ -111,7 +111,7 @@ the data layer.
 
 <p align="center">
   <a href="https://hassanireza.github.io/meridianHealth/tools/zone-calibration/">
-    <img src="docs/screenshots/zone-calibration-tool.png" alt="Zone Calibration Studio — interactive body zone editor" width="100%" />
+    <img src="docs/screenshots/zone-calibration-tool.png" alt="Zone Calibration Studio, interactive body zone editor" width="100%" />
   </a>
 </p>
 
@@ -127,14 +127,14 @@ the data layer.
 | Per view, per body type | Male/female and front/back are calibrated independently, matching the app's own data model |
 | Live coordinate readout | Position, dimensions, and rotation update in real time as a zone is adjusted |
 | JSON import / export | Export a calibrated view as JSON, or re-import a previous pass to continue refining it |
-| Zero build step | A static HTML/CSS/JS tool with no dependencies — open it directly, or serve it locally |
+| Zero build step | A static HTML/CSS/JS tool with no dependencies, open it directly, or serve it locally |
 
 The studio is deployed alongside the main application and published at
 **[`/tools/zone-calibration/`](https://hassanireza.github.io/meridianHealth/tools/zone-calibration/)**
 on the same GitHub Pages site, and lives in this repository under
 [`public/tools/zone-calibration`](public/tools/zone-calibration). Because it sits inside `public/`,
 Vite copies it into `dist/` unmodified on every build, so it deploys automatically through the
-same CI/CD pipeline as the main application — no separate workflow required.
+same CI/CD pipeline as the main application, no separate workflow required.
 
 ## Features
 
@@ -184,7 +184,7 @@ src/
 public/
   mannikin/        Mannequin artwork (front/back, male/female)
   tools/
-    zone-calibration/  Zone Calibration Studio — static app, deployed as-is to Pages
+    zone-calibration/  Zone Calibration Studio, static app, deployed as-is to Pages
 docs/
   diagrams/        README illustrations
   screenshots/      README product screenshots

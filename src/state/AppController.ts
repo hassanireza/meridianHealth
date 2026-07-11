@@ -31,7 +31,7 @@ type Listener = (snapshot: AppSnapshot) => void;
 const ANALYSIS_DELAY_MS = 1200;
 
 /**
- * Meridian Health — AppController.
+ * Meridian Health: AppController.
  *
  * A small, dependency-free, class-based state manager. It owns every piece
  * of interactive state on the page (selected gender/view, the active body

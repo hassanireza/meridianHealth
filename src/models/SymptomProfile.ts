@@ -2,7 +2,7 @@ import type { Severity } from './types';
 import { Symptom } from './Symptom';
 
 /**
- * Meridian Health — SymptomProfile model.
+ * Meridian Health: SymptomProfile model.
  * Aggregates the symptoms a person has selected across zones during a
  * session, along with a self-reported severity level.
  */

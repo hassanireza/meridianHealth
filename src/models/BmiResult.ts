@@ -15,7 +15,7 @@ const CATEGORY_DESCRIPTION: Record<BmiCategory, string> = {
 };
 
 /**
- * Meridian Health — BmiResult model.
+ * Meridian Health: BmiResult model.
  * Derives Body Mass Index and its WHO-standard weight-status category
  * from a patient's self-reported weight and height.
  */

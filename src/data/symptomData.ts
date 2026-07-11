@@ -1,5 +1,5 @@
 /**
- * Meridian Health — Symptom Data
+ * Meridian Health: Symptom Data
  * Structured clinical reference data for each body zone.
  * Generated from the original static site's data module.
  */
@@ -211,7 +211,7 @@ export const SYMPTOM_DATA: Record<string, ZoneSymptomData> = {
       "Dull persistent ache",
       "Sharp pain with movement",
       "Pain radiating to the buttock",
-      "Sciatica — pain down the leg",
+      "Sciatica (pain radiating down the leg)",
       "Stiffness on rising",
       "Pain worsening with sitting",
       "Pain worsening with standing",

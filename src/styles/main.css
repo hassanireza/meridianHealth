@@ -118,6 +118,24 @@ nav {
   gap: 16px;
 }
 
+.nav-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--navy);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-menu-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
 .btn-ghost {
   font-size: 12px;
   font-weight: 500;
@@ -1194,6 +1212,8 @@ footer {
   .how-section          { padding: 64px 28px; }
   nav                   { padding: 0 24px; }
   .nav-links            { display: none; }
+  .nav-cta              { display: none; }
+  .nav-menu-btn         { display: flex; }
   footer                { flex-direction: column; gap: 20px; text-align: center; }
 }
 
@@ -1844,7 +1864,7 @@ footer {
 
 /* ============================================================
    APP SHELL LAYER
-   The symptom checker is the product — it must be fully usable
+   The symptom checker is the product: it must be fully usable
    as a single, no-scroll screen ("hero" = the app), on any
    viewport, phone included. Loaded last to win the cascade.
    ============================================================ */
@@ -1926,6 +1946,7 @@ html, body {
     flex-direction: column;
     height: 100dvh;
     min-height: 100dvh;
+    padding-top: 72px;
   }
 
   .hero-left {
@@ -2072,4 +2093,100 @@ html, body {
 
 @media (max-width: 900px) and (max-height: 700px) {
   .patient-card { display: none; }
+}
+
+/* ============================================================
+   MOBILE NAV: compact app bar + full-screen menu sheet
+   ============================================================ */
+@media (max-width: 900px) {
+  nav {
+    height: 56px;
+    padding: 0 10px 0 16px;
+  }
+
+  .nav-logo-mark {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nav-logo-text {
+    font-size: 15px;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-menu-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+  }
+
+  .nav-menu-btn:active {
+    background: rgba(10, 22, 40, 0.06);
+  }
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    position: fixed;
+    inset: 0;
+    padding: 100px 32px 48px;
+    background: rgba(248, 247, 245, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.32s var(--spring, ease), transform 0.32s var(--spring, ease);
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .mobile-menu-links a {
+    display: block;
+    padding: 16px 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline, rgba(10, 22, 40, 0.08));
+  }
+
+  .mobile-menu-links a:active {
+    color: var(--gold);
+  }
+
+  .mobile-menu-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobile-menu-cta .btn-ghost,
+  .mobile-menu-cta .btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+  }
 }

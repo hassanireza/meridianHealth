@@ -1,7 +1,7 @@
 {
   "name": "Meridian Health | Symptom Intelligence",
   "short_name": "Meridian Health",
-  "description": "Physician-informed symptom intelligence for 400+ conditions across 38 body regions.",
+  "description": "Physician-informed symptom intelligence for 400+ conditions across 24 body regions.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F8F7F5",

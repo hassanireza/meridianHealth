@@ -1,7 +1,7 @@
 import type { ConditionRecord, MatchStrength, Priority } from './types';
 
 /**
- * Meridian Health — Condition model.
+ * Meridian Health: Condition model.
  * Represents a candidate clinical condition returned by the analysis engine.
  */
 export class Condition {

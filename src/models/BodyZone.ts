@@ -2,7 +2,7 @@ import type { ZoneSymptomData } from './types';
 import { Symptom } from './Symptom';
 
 /**
- * Meridian Health — BodyZone model.
+ * Meridian Health: BodyZone model.
  * Wraps the clinical reference data for an anatomical region and exposes
  * typed symptom objects instead of raw strings.
  */
